@@ -22,4 +22,4 @@ More details on "Project_Description.pdf".
 | Poly1305  | 87,482                          | 27,091                      |
 | ECDH      | (45,611,933, 42,491,583)        | (15,595,424, 14,634,796)    |
 
-More details on the final implementation in "Final_Report.pdf"
+More details on the final implementation in "Final_Report.pdf".
