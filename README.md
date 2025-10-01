@@ -1,23 +1,22 @@
 # Cryptographic Optimizations: ChaCha20, Poly1305, and ECDH
 
-This project explores performance optimizations of three widely used cryptographic algorithms: **ChaCha20**, **Poly1305**, and **Elliptic Curve Diffie-Hellman (ECDH)**.  
-Our goal was to reduce execution cycles while ensuring correctness and constant-time execution to prevent side-channel attacks.
+This project focuses on optimizing three widely used cryptographic primitives — **ChaCha20**, **Poly1305**, and **Elliptic Curve Diffie-Hellman (ECDH)** — for efficient execution on the **ARM Cortex-M4 microcontroller**.  
+
+The motivation behind this work is to improve performance while maintaining correctness and security properties such as constant-time execution. Cryptographic primitives are often performance bottlenecks in resource-constrained environments (e.g., embedded systems, IoT), making such optimizations highly relevant.
 
 ---
 
-## 📌 Project Overview
+## 📌 Project Goals
 
-We implemented and optimized:
-- **ChaCha20** (stream cipher)  
-- **Poly1305** (message authentication code)  
-- **ECDH** on Ed25519 curves (key exchange protocol)
-
-The optimizations were focused on:
-- **Assembly-level improvements**  
-- **Radix transformation (from 8 to 26)**  
-- **Constant-time implementations to mitigate timing leaks**  
-
-More details on "Project_Description.pdf".
+- Start from public C reference implementations of:
+  - [ChaCha20](https://cr.yp.to/papers.html#chacha)  
+  - [Poly1305](https://cr.yp.to/papers.html#poly1305)  
+  - ECDH key exchange on Curve25519 in Edwards form
+- Re-engineer the implementations to run **substantially faster** on the ARM Cortex-M4.
+- Ensure that the optimized code:
+  - Has **no secret-dependent branches** or memory accesses (constant-time execution).  
+  - Passes all regression tests (functional correctness preserved).  
+  - Substantially outperforms the reference implementations.  
 
 ---
 
